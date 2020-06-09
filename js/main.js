@@ -1,196 +1,80 @@
 "use strict";
 
-var massiveObj = [];
 
-var massiveObj[1] = {
-  author: {
-  avatar: "img/avatars/user1.png"
-},
-  offer: {
-  title: "Заголовок 1"
-  address: x, y,
-  price: 200
-  type: "palace",
-  rooms: 2,
-  guests: 4,
-  checkin: "13:00",
-    checkout: "14:00",
-  features: wifi, dishwasher, parking, washer, elevator, conditioner,
-    description: "строка с описанием",
-    photos: "http://o0.github.io/assets/images/tokyo/hotel1.jpg, http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"
-},
-  location: {
-  x: 600
-  y: 350.
-}
-};
 
-var  massiveObj[2] = {
-  author: {
-    avatar: "img/avatars/user2.png"
-  },
-  offer: {
-    title: "Заголовок 2",
-    address: x, y,
-    price: 300.
-    type: "flat",
-    rooms: 3,
-    guests: 4,
-    checkin: "13:00",
-    checkout: "14:00",
-    features: wifi, dishwasher, parking, washer, elevator, conditioner,
-    description: "строка с описанием",
-    photos: "http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"
-  },
-  location: {
-    x: 500
-    y: 350.
-  }
-};
 
-var  massiveObj[3] = {
-  author: {
-    avatar: "img/avatars/user3.png"
-  },
-  offer: {
-    title: "Заголовок 3",
-    address: x, y,
-    price: 400.
-    type: "house",
-    rooms: 2,
-    guests: 2,
-    checkin: "12:00",
-    checkout: "13:00",
-    features: wifi, dishwasher, parking, washer, conditioner,
-    description: "строка с описанием",
-    photos: "http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"
-  },
-  location: {
-    x: 650,
-    y: 400.
-  }
-};
-
-var  massiveObj[4] = {
-  author: {
-    avatar: "img/avatars/user4.png"
-  },
-  offer: {
-    title: "Заголовок 4",
-    address: x, y,
-    price: 450.
-    type: "bungalo",
-    rooms: 1,
-    guests: 2,
-    checkin: "13:00",
-    checkout: "14:00",
-    features: wifi, dishwasher, parking, washer,
-    description: "строка с описанием",
-    photos: "http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"
-  },
-  location: {
-    x: 700,
-    y: 450.
-  }
-};
-
-var  massiveObj[5] = {
-  author: {
-    avatar: "img/avatars/user5.png"
-  },
-  offer: {
-    title: "Заголовок 5",
-    address: x, y,
-    price: 750.
-    type: "bungalo",
-    rooms: 1,
-    guests: 2,
-    checkin: "13:00",
-    checkout: "14:00",
-    features: wifi, dishwasher, parking, washer, elevator, conditioner,
-    description: "строка с описанием",
-    photos: "http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"
-  },
-  location: {
-    x: 650,
-    y: 400.
-  }
-};
-
-var  massiveObj[6] = {
-  author: {
-    avatar: "img/avatars/user6.png"
-  },
-  offer: {
-    title: "Заголовок 6",
-    address: x, y,
-    price: 850.
-    type: "palace",
-    rooms: 1,
-    guests: 2,
-    checkin: "13:00",
-    checkout: "14:00",
-    features: wifi, dishwasher, parking, washer, elevator, conditioner,
-    description: "строка с описанием",
-    photos: "http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"
-  },
-  location: {
-    x: 730,
-    y: 700.
-  }
-};
-
-var  massiveObj[7] = {
-  author: {
-    avatar: "img/avatars/user7.png"
-  },
-  offer: {
-    title: "Заголовок 7",
-    address: x, y,
-    price: 850.
-    type: "palace",
-    rooms: 4,
-    guests: 10,
-    checkin: "13:00",
-    checkout: "14:00",
-    features: wifi, dishwasher, parking, washer, elevator, conditioner,
-    description: "строка с описанием",
-    photos: "http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"
-  },
-  location: {
-    x: 710,
-    y: 750.
-  }
-};
-
-var  massiveObj[8] = {
+/*massiveObj[8] = {
   author: {
     avatar: "img/avatars/user8.png"
   },
   offer: {
     title: "Заголовок 8",
-    address: x, y,
-    price: 850.
+    price: 850,
     type: "palace",
     rooms: 4,
     guests: 10,
     checkin: "13:00",
     checkout: "14:00",
-    features: wifi, dishwasher, parking, washer, elevator, conditioner,
     description: "строка с описанием",
-    photos: "http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"
   },
   location: {
     x: 860,
     y: 400.
   }
-};
+}; */
 
+var massiveObj = [];
+var featuresArr = ["wifi", "dishwasher", "parking", "washer", "elevator", "conditioner"];
+var typeArr = ["palace", "flat", "house", "bungalo"];
+var timeArr = ["12:00", "13:00", "14:00"];
+var photoArr = ["http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"];
 
+function randomInteger(min, max) {
+  var numberRandom = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.floor(numberRandom);
+}
 
 function createObject(length) {
-    for (var i = 0; i <= massiveObj.length; i++) {
-      
-      return result;
+    for (var i = 1; i <= length; i++) {
+      massiveObj[i] = {
+        author: {
+          avatar: "img/avatars/user" + i + '.png'
+        },
+        offer: {
+          title: "Заголовок " + i,
+          adress: "{{location.x}}, {{location.y}}",
+          price: randomInteger(10000, 50000),
+          type: typeArr[Math.floor(Math.random() * typeArr.length)],
+          rooms: randomInteger(1, 4),
+          guests: randomInteger(1, 3),
+          checkin: timeArr[Math.floor(Math.random() * timeArr.length)],
+          checkout: timeArr[Math.floor(Math.random() * timeArr.length)],
+          features: featuresArr[Math.floor(Math.random() * featuresArr.length)],
+          description: "строка с описанием",
+          photos: photoArr,
+        },
+        location: {
+          x: 650,
+          y: randomInteger(130, 630)
+        }
+      };
     }
 }
+
+var createObject = document.querySelector('.map__pins');
+
+function addObject() {
+  for (var i = 1; i <= massiveObj.length; i++) {
+    var newObject = document.createElement('div');
+    var pinButton = document.createElement('button');
+    var pinImage = document.createElement('img');
+
+    pinButton.style.left = massiveObj[i].location.x;
+    pinButton.style.top = massiveObj[i].location.y;
+    pinImage.src = massiveObj[i].author.avatar;
+
+  }
+};
+
+createObject(8);
+console.log( massiveObj);
