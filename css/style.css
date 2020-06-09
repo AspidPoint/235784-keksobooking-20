@@ -1249,3 +1249,8 @@ fieldset {
 .hidden {
   display: none;
 }
+
+.standartImg {
+  width: 40px;
+  height: 40px;
+}

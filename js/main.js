@@ -28,6 +28,8 @@ var featuresArr = ["wifi", "dishwasher", "parking", "washer", "elevator", "condi
 var typeArr = ["palace", "flat", "house", "bungalo"];
 var timeArr = ["12:00", "13:00", "14:00"];
 var photoArr = ["http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"];
+var findObject = document.querySelector('.map__pins');
+
 
 function randomInteger(min, max) {
   var numberRandom = min - 0.5 + Math.random() * (max - min + 1);
@@ -38,7 +40,7 @@ function createObject(length) {
     for (var i = 1; i <= length; i++) {
       massiveObj[i] = {
         author: {
-          avatar: "img/avatars/user" + i + '.png'
+          avatar: "img/avatars/user0" + i + '.png'
         },
         offer: {
           title: "Заголовок " + i,
@@ -54,27 +56,27 @@ function createObject(length) {
           photos: photoArr,
         },
         location: {
-          x: 650,
+          x: randomInteger(100, 800),
           y: randomInteger(130, 630)
         }
       };
+      var pinButton = document.createElement('button');
+      var pinImage = document.createElement('img');
+
+      pinButton.style = "left:" + massiveObj[i].location.x + "px; " + "top:" + massiveObj[i].location.y + "px";
+      pinButton.classList.add("map__pin");
+      pinButton.type = "button";
+      pinImage.src = massiveObj[i].author.avatar;
+      pinImage.classList.add('standartImg');
+
+      findObject.append(pinButton);
+      pinButton.append(pinImage);
     }
 }
 
-var createObject = document.querySelector('.map__pins');
 
-function addObject() {
-  for (var i = 1; i <= massiveObj.length; i++) {
-    var newObject = document.createElement('div');
-    var pinButton = document.createElement('button');
-    var pinImage = document.createElement('img');
 
-    pinButton.style.left = massiveObj[i].location.x;
-    pinButton.style.top = massiveObj[i].location.y;
-    pinImage.src = massiveObj[i].author.avatar;
 
-  }
-};
 
 createObject(8);
 console.log( massiveObj);
