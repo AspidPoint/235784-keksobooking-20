@@ -1,36 +1,13 @@
 "use strict";
 
-
-
-
-/*availableRealty[8] = {
-  author: {
-    avatar: "img/avatars/user8.png"
-  },
-  offer: {
-    title: "Заголовок 8",
-    price: 850,
-    type: "palace",
-    rooms: 4,
-    guests: 10,
-    checkin: "13:00",
-    checkout: "14:00",
-    description: "строка с описанием",
-  },
-  location: {
-    x: 860,
-    y: 400.
-  }
-}; */
-
-var availableRealty = [];
+var availableRealtys = [];
 var possiblefeatures = ["wifi", "dishwasher", "parking", "washer", "elevator", "conditioner"];
 var realtyTypes = ["palace", "flat", "house", "bungalo"];
 var possibleTimes = ["12:00", "13:00", "14:00"];
-var photosUrl = ["http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"];
-var getWorkArea = document.querySelector('.map__pins');
-var locationArrowX = 25;
-var locationArrowY = 70;
+var photoUrls = ["http://o0.github.io/assets/images/tokyo/hotel1.jpg", "http://o0.github.io/assets/images/tokyo/hotel2.jpg", "http://o0.github.io/assets/images/tokyo/hotel3.jpg"];
+var WorkArea = document.querySelector(".map__pins");
+var LOCATION_ARROW_X = 25;
+var LOCATION_ARROW_Y = 70;
 
 
 function getRandomInteger(min, max) {
@@ -38,7 +15,7 @@ function getRandomInteger(min, max) {
   return Math.floor(numberRandom);
 }
 
-function difinitionOfTimes(massive) {
+function getArrayElement(massive) {
   return massive[Math.floor(Math.random() * massive.length)];
 }
 
@@ -46,7 +23,7 @@ function getSliceFromFeaures(arrayInto) {
   var sliceLen = getRandomInteger(0, arrayInto.length);
   var randomIntos = [];
   for (var i = 0; i <= sliceLen; i++) {
-    randomIntos.push(difinitionOfTimes(arrayInto));
+    randomIntos.push(getArrayElement(arrayInto));
   }
   /*массив на определение уникальности */
   var uniqRandomIntos = [];
@@ -55,46 +32,41 @@ function getSliceFromFeaures(arrayInto) {
       uniqRandomIntos.push(randomIntos[i]);
     }
   }
+  /* добавить ретёрн */
 }
-
-getSliceFromFeaures(possiblefeatures);
 
 function createObject(length) {
     for (var i = 1; i <= length; i++) {
-      availableRealty[i] = {
+      var locationX = getRandomInteger(100, 800) - LOCATION_ARROW_X;
+      var locationY = getRandomInteger(130, 630) + LOCATION_ARROW_Y;
+      availableRealtys[i] = {
         author: {
-          avatar: "img/avatars/user0" + i + '.png'
+          avatar: "img/avatars/user0" + i + ".png"
         },
         offer: {
           title: "Заголовок " + i,
-          adress: "",
+          adress: locationX + "; " + locationY ,
           price: getRandomInteger(10000, 50000),
           type: realtyTypes[Math.floor(Math.random() * realtyTypes.length)],
           rooms: getRandomInteger(1, 4),
           guests: getRandomInteger(1, 3),
-          checkin: difinitionOfTimes(possibleTimes),
-          checkout: difinitionOfTimes(possibleTimes),
+          checkin: getArrayElement(possibleTimes),
+          checkout: getArrayElement(possibleTimes),
           features: getSliceFromFeaures(possiblefeatures),
           description: "строка с описанием",
-          photos: getSliceFromFeaures(photosUrl),
+          photos: getSliceFromFeaures(photoUrls),
         },
         location: {
-          x: getRandomInteger(100, 800),
-          y: getRandomInteger(130, 630)
+          x: locationX,
+          y: locationY
         }
       };
-      /* добавляем сгенерированые координаты в offer.adress */
-      availableRealty[i].offer.adress = String(availableRealty[i].location.x) + "; " + String(availableRealty[i].location.y);
-      availableRealty[i].location.x -=  locationArrowX;
-      availableRealty[i].location.y +=  locationArrowY;
-      
-      drawnRealty(availableRealty[i]);
+      drawnRealty(availableRealtys[i]);
     }
 
 }
 
 function drawnRealty (realty) {
-  console.log(realty.location);
 
     var pinButton = document.createElement("button");
     var pinImage = document.createElement("img");
@@ -105,10 +77,11 @@ function drawnRealty (realty) {
     pinImage.src = realty.author.avatar;
     pinImage.classList.add("standartImg");
 
-    getWorkArea.append(pinButton);
+    WorkArea.append(pinButton);
     pinButton.append(pinImage);
 }
 
 
 
 createObject(8);
+
